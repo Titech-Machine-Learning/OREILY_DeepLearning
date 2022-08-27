@@ -38,6 +38,13 @@ def relu_graph() -> None:
     plt.show()
 
 
+def softmax(x):  # type: ignore
+    constant = np.max(x)
+    exp_x = np.exp(x - constant)  # overflow 対策
+    sum_exp_x = np.sum(exp_x)
+    return exp_x / sum_exp_x
+
+
 def main() -> None:
     # step 関数の挙動を説明するためのコード
     x: np.ndarray = np.array([-1.0, 1.0, 2.0])
