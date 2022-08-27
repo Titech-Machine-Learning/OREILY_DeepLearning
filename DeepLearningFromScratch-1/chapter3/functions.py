@@ -72,6 +72,12 @@ def main() -> None:
     # ReLU関数
     relu_graph()
 
+    # softmax関数
+    a: np.ndarray = np.array([0.3, 2.9, 4.0])
+    print("softmax(a) = ", type(softmax(a)), end="")
+    print(softmax(a))
+    print(np.sum(softmax(a)))
+
 
 if __name__ == "__main__":
     main()
